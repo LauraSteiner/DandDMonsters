@@ -14,20 +14,22 @@ struct MonsterListView: View {
     var body: some View {
 		NavigationStack{
 			ZStack{
-				if monstersVM.isLoading{
-					ProgressView()
-						.tint(.red)
-						.scaleEffect(4)
-				}
 				List(monstersVM.monsters){
 					monster in
-					Text(monster.name)
-						.listRowSeparator(.hidden)
-						.font(.title2)
+					NavigationLink(destination: MonsterDetailView(monster: monster)) {
+						Text(monster.name)
+							.listRowSeparator(.hidden)
+							.font(.title2)
+					}
 				}
 				.listStyle(.plain)
 				.task{
 					await monstersVM.getData()
+				}
+				if monstersVM.isLoading{
+					ProgressView()
+						.tint(.red)
+						.scaleEffect(4)
 				}
 			}
 			.padding()

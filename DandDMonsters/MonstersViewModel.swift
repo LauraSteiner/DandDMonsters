@@ -15,13 +15,17 @@ class MonstersViewModel {
 	var isLoading = false
 	var monsters: [Monster] = []
 	
-// This works, but the test says to load when View appears.
+	// This works, but the test says to load when View appears.
 	
-//	init(){
-//		Task {
-//			await self.getData()
-//		}
-//	}
+	//	init(){
+	//		Task {
+	//			await self.getData()
+	//		}
+	//	}
+	
+//	static var testMonster: Monster = Monster( index: "copper-dragon-wyrmling",
+//				 name: "Copper Dragon Wyrmling",
+//				 url: "/api/2014/monsters/copper-dragon-wyrmling")
 	
 	private struct Returned: Codable {
 		var count: Int
@@ -44,10 +48,10 @@ class MonstersViewModel {
 				return
 			}
 			Task { @MainActor in
-					self.count = returned.count
-					self.monsters = returned.results
-					isLoading = false
-				}
+				self.count = returned.count
+				self.monsters = returned.results
+				isLoading = false
+			}
 			
 		} catch {
 			print("ERROR -- Could not get data from \(urlString): \(error.localizedDescription)")

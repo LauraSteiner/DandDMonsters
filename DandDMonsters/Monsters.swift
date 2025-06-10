@@ -18,4 +18,10 @@ class Monster: Codable, Identifiable {
 		case name
 		case url
 	}
+	
+	init(index: String, name: String, url: String) {
+		self.index = index
+		self.name = name
+		self.url = url
+	}
 }
