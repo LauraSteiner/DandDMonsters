@@ -9,19 +9,43 @@ import SwiftUI
 
 struct MonsterDetailView: View {
 	@State var monster: Monster
-	@State var monsterDetail = MonsterDetail()
+	@State var monsterDetailVM = MonsterDetailViewModel()
     var body: some View {
 		VStack{
 			Text(monster.name)
-			Text(monsterDetail.type)
+				.bold()
+				.font(.largeTitle)
+				.padding(.bottom)
+			Grid(alignment: .leading, horizontalSpacing: 12.0, verticalSpacing: 10.0) {
+				GridRow( alignment: .firstTextBaseline) {
+					Text("Type:")
+						.bold()
+					Text(monsterDetailVM.type.capitalized)
+				}
+				GridRow( alignment: .firstTextBaseline) {
+					Text("Size:")
+						.bold()
+					Text(monsterDetailVM.size.capitalized)
+				}
+				GridRow( alignment: .firstTextBaseline) {
+					Text("Alignment:")
+						.bold()
+					Text(monsterDetailVM.alignment.capitalized)
+				}
+				GridRow( alignment: .firstTextBaseline) {
+					Text("Hit Points:")
+						.bold()
+					Text(String(monsterDetailVM.hitPoints))
+				}
+							
+			}
 			
-//			AsyncImage(url: URL(string: monsterDetail.image)!){ image in
-//				
-//			}
+
 		}
+		.padding()
 		.task{
-			monsterDetail.urlString = monster.url
-			await monsterDetail.getData()
+			monsterDetailVM.urlString = monsterDetailVM.baseURL + monster.url
+			await monsterDetailVM.getData()
 		}
     }
 }

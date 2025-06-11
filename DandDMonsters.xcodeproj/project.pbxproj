@@ -12,6 +12,7 @@
 		B30B60C12DF8DCEF00DA9E7A /* Monsters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30B60BC2DF8DCEF00DA9E7A /* Monsters.swift */; };
 		B30B60E22DF8F69B00DA9E7A /* MonsterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30B60E12DF8F69A00DA9E7A /* MonsterDetailView.swift */; };
 		B30B60E62DFA1BB100DA9E7A /* MonsterDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30B60E52DFA1BB100DA9E7A /* MonsterDetail.swift */; };
+		B30B60EB2DFA2B0A00DA9E7A /* MonsterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30B60EA2DFA2B0A00DA9E7A /* MonsterDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		B30B60BD2DF8DCEF00DA9E7A /* MonstersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonstersViewModel.swift; sourceTree = "<group>"; };
 		B30B60E12DF8F69A00DA9E7A /* MonsterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterDetailView.swift; sourceTree = "<group>"; };
 		B30B60E52DFA1BB100DA9E7A /* MonsterDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterDetail.swift; sourceTree = "<group>"; };
+		B30B60EA2DFA2B0A00DA9E7A /* MonsterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterDetailViewModel.swift; sourceTree = "<group>"; };
 		B37E8FBE2DF8D503004E59F4 /* DandDMonsters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DandDMonsters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B37E8FCB2DF8D507004E59F4 /* DandDMonstersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DandDMonstersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B37E8FD52DF8D507004E59F4 /* DandDMonstersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DandDMonstersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +121,7 @@
 		B30B60E92DFA232200DA9E7A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				B30B60EA2DFA2B0A00DA9E7A /* MonsterDetailViewModel.swift */,
 				B30B60BD2DF8DCEF00DA9E7A /* MonstersViewModel.swift */,
 			);
 			path = ViewModels;
@@ -291,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B30B60EB2DFA2B0A00DA9E7A /* MonsterDetailViewModel.swift in Sources */,
 				B30B60BF2DF8DCEF00DA9E7A /* MonstersViewModel.swift in Sources */,
 				B30B60C02DF8DCEF00DA9E7A /* MonsterListView.swift in Sources */,
 				B30B60C12DF8DCEF00DA9E7A /* Monsters.swift in Sources */,
