@@ -10,44 +10,45 @@ import SwiftUI
 struct MonsterDetailView: View {
 	@State var monster: Monster
 	@State var monsterDetailVM = MonsterDetailViewModel()
-    var body: some View {
+	var body: some View {
 		VStack{
 			Text(monster.name)
 				.bold()
 				.font(.largeTitle)
 				.padding(.bottom)
-			Grid(alignment: .leading, horizontalSpacing: 12.0, verticalSpacing: 10.0) {
-				GridRow( alignment: .firstTextBaseline) {
+			HStack{
+				VStack(alignment: .leading){
 					Text("Type:")
 						.bold()
 					Text(monsterDetailVM.type.capitalized)
-				}
-				GridRow( alignment: .firstTextBaseline) {
-					Text("Size:")
-						.bold()
-					Text(monsterDetailVM.size.capitalized)
-				}
-				GridRow( alignment: .firstTextBaseline) {
+						.padding(.bottom)
+					
 					Text("Alignment:")
 						.bold()
 					Text(monsterDetailVM.alignment.capitalized)
 				}
-				GridRow( alignment: .firstTextBaseline) {
+				
+				Spacer()
+				
+				VStack(alignment: .leading){
+					Text("Size:")
+						.bold()
+					Text(monsterDetailVM.size.capitalized)
+						.padding(.bottom)
+					
 					Text("Hit Points:")
 						.bold()
-					Text(String(monsterDetailVM.hitPoints))
+					Text("\(monsterDetailVM.hitPoints)")
 				}
-							
 			}
-			
-
+			.padding(.horizontal)
 		}
 		.padding()
 		.task{
 			monsterDetailVM.urlString = monsterDetailVM.baseURL + monster.url
 			await monsterDetailVM.getData()
 		}
-    }
+	}
 }
 
 #Preview {
