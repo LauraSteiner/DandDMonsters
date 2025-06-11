@@ -9,8 +9,20 @@ import SwiftUI
 
 struct MonsterDetailView: View {
 	@State var monster: Monster
+	@State var monsterDetail = MonsterDetail()
     var body: some View {
-		Text(monster.name)
+		VStack{
+			Text(monster.name)
+			Text(monsterDetail.type)
+			
+//			AsyncImage(url: URL(string: monsterDetail.image)!){ image in
+//				
+//			}
+		}
+		.task{
+			monsterDetail.urlString = monster.url
+			await monsterDetail.getData()
+		}
     }
 }
 

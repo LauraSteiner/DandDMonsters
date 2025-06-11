@@ -10,7 +10,7 @@ import Foundation
 @Observable
 class MonstersViewModel {
 	var urlString = "https://www.dnd5eapi.co/api/2014/monsters"
-	var baseURL = "https://www.dnd5eapi.co"
+	static var baseURL = "https://www.dnd5eapi.co"
 	var count = 0
 	var isLoading = false
 	var monsters: [Monster] = []
@@ -22,10 +22,6 @@ class MonstersViewModel {
 	//			await self.getData()
 	//		}
 	//	}
-	
-//	static var testMonster: Monster = Monster( index: "copper-dragon-wyrmling",
-//				 name: "Copper Dragon Wyrmling",
-//				 url: "/api/2014/monsters/copper-dragon-wyrmling")
 	
 	private struct Returned: Codable {
 		var count: Int

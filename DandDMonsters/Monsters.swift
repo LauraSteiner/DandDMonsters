@@ -24,4 +24,8 @@ class Monster: Codable, Identifiable {
 		self.name = name
 		self.url = url
 	}
+	
+	func getData(){
+		
+	}
 }
